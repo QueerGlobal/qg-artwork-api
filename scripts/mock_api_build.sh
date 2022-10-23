@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cd api/testing/mocks
-docker build -t mock-artwork-api -f artwork_dockerfile
+docker build -t mock-artwork-api -f artwork_dockerfile .
 
