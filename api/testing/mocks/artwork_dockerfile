@@ -1,11 +1,14 @@
 FROM node:14-alpine
 
 RUN npm install -g @mockoon/cli@2.1.0
-COPY mockoon-queerglobal-artwork-api.json ./mockoon-queerglobal-artwork-api.json
+
+RUN mkdir /app
+
+COPY mockoon-queerglobal-artwork-api.json app/mockoon-queerglobal-artwork-api.json
 
 # Do not run as root.
 RUN adduser --shell /bin/sh --disabled-password --gecos "" mockoon
-RUN chown -R mockoon ./mockoon-queerglobal-artwork-api.json
+RUN chown -R mockoon app/mockoon-queerglobal-artwork-api.json
 USER mockoon
 
 EXPOSE 31001
