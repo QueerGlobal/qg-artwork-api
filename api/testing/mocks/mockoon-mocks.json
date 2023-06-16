@@ -1,22 +1,22 @@
 {
-  "uuid": "f8900950-dc48-4ccf-b364-f2b3f7776feb",
+  "uuid": "e0f993f2-4bc9-45a8-98ec-978f8b9b8a53",
   "lastMigration": 27,
   "name": "QueerGlobal Artwork API",
   "endpointPrefix": "api",
   "latency": 0,
-  "port": 3001,
+  "port": 3000,
   "hostname": "",
   "folders": [],
   "routes": [
     {
-      "uuid": "9933b141-a164-4303-8623-cb0e1859b6cd",
+      "uuid": "a83849a7-fb2c-4e05-9ba3-ad32d788389b",
       "type": "http",
       "documentation": "Healthcheck for this API",
       "method": "get",
       "endpoint": "healthcheck",
       "responses": [
         {
-          "uuid": "e196f547-02b6-4538-a312-b4654662d777",
+          "uuid": "729e80cc-65f9-4084-ab3b-a7c6486fac3d",
           "body": "[\n  {\n    \"status\": \"\",\n    \"serviceName\": \"\"\n  }\n]",
           "latency": 0,
           "statusCode": 200,
@@ -38,7 +38,7 @@
           "default": true
         },
         {
-          "uuid": "f5e16db0-2df3-419f-898f-5ab1a30c1a4e",
+          "uuid": "dc306373-63a2-43d2-9612-a303f3409bc5",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -64,15 +64,15 @@
       "responseMode": null
     },
     {
-      "uuid": "ef031e81-393e-4afc-89e9-a0bbeac629f8",
+      "uuid": "3fae4e78-0a09-484c-816c-324cca088369",
       "type": "http",
       "documentation": "Returns an artwork by ID",
       "method": "get",
       "endpoint": "artwork/:id",
       "responses": [
         {
-          "uuid": "4d35b8da-f860-4caa-b81b-0b5f4f16fadc",
-          "body": "{\n  \"artworkID\": {{urlParam 'id'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"\",\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "uuid": "49d07db6-ef6d-4ae2-a6fe-e1a8ab5590ff",
+          "body": "{\n  \"artworkID\": \"{{urlParam 'id'}}\",\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"\",\n  \"ownerPersonID\": \"{{faker 'datatype.uuid'}}\",\n  \"chips\": [\n    {\n      \"id\": \"{{faker 'datatype.uuid'}}\",\n      \"value\": \"\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "artwork response",
@@ -93,7 +93,7 @@
           "default": true
         },
         {
-          "uuid": "aa9f2c63-f7fe-491a-95d8-788c9a7a5ff0",
+          "uuid": "9e6fc211-8135-4e8d-be52-3fdd6636d9d9",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -119,14 +119,14 @@
       "responseMode": null
     },
     {
-      "uuid": "6420915a-15a5-48d7-a609-222daadfd2cf",
+      "uuid": "45ecd90d-55ee-4a5c-898c-8218335f86d7",
       "type": "http",
       "documentation": "Deletes an artwork by ID",
       "method": "delete",
       "endpoint": "artwork/:id",
       "responses": [
         {
-          "uuid": "65363355-2787-4e21-8201-3bc594302cc6",
+          "uuid": "0d9aaff6-9765-4f53-af10-38a540aff5a8",
           "body": "",
           "latency": 0,
           "statusCode": 204,
@@ -148,7 +148,7 @@
           "default": true
         },
         {
-          "uuid": "a8b14e5a-d88c-45d5-9760-e1ce5d2d9f1d",
+          "uuid": "bb70232d-d3b8-4c99-9f9b-572df488b12e",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -174,15 +174,15 @@
       "responseMode": null
     },
     {
-      "uuid": "f5e9156c-5e84-46a3-a19f-2ad064ac9b4b",
+      "uuid": "18340580-c017-41b7-a234-ba35fe71f147",
       "type": "http",
       "documentation": "Update an artwork",
       "method": "put",
       "endpoint": "artwork/:id",
       "responses": [
         {
-          "uuid": "f0ae4ecb-7f75-4814-ae28-9d152a494bdb",
-          "body": "{\n  \"artworkID\": {{urlParam 'id'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"http://www.example.com/example\",\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "uuid": "acd86637-3f22-4d9c-87be-1fac33b767f9",
+          "body": "{\n  \"artworkID\": \"{{urlParam 'id'}}\",\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"\",\n  \"ownerPersonID\": \"{{faker 'datatype.uuid'}}\",\n  \"chips\": [\n    {\n      \"id\": \"{{faker 'datatype.uuid'}}\",\n      \"value\": \"\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "artwork",
@@ -203,7 +203,7 @@
           "default": true
         },
         {
-          "uuid": "57647a0f-0e30-4449-8c59-7101de95587f",
+          "uuid": "8fdcdc76-482f-4eec-b039-f244413947aa",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -229,15 +229,15 @@
       "responseMode": null
     },
     {
-      "uuid": "06ecaf49-8f7f-4358-a1b2-46d8c85eb592",
+      "uuid": "43f85f4f-c04a-4816-a856-d0b4d8de304b",
       "type": "http",
       "documentation": "Creates a new artwork",
       "method": "post",
       "endpoint": "artwork",
       "responses": [
         {
-          "uuid": "a0e6aeb7-cc63-4f2c-b155-36a9b23ad4e3",
-          "body": "{\n  \"artworkID\": {{urlParam 'id'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"\",\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "uuid": "321af184-2c63-4c82-9d30-c774b9e58dac",
+          "body": "{\n  \"artworkID\": \"{{faker 'datatype.uuid'}}\",\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"\",\n  \"ownerPersonID\": \"{{faker 'datatype.uuid'}}\",\n  \"chips\": [\n    {\n      \"id\": \"{{faker 'datatype.uuid'}}\",\n      \"value\": \"\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "artwork",
@@ -258,7 +258,7 @@
           "default": true
         },
         {
-          "uuid": "d8c524c7-b053-4da6-8250-d5e04dba130e",
+          "uuid": "53ebafcc-c124-40fa-9a0e-e03fb21edbd3",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -284,15 +284,15 @@
       "responseMode": null
     },
     {
-      "uuid": "ca838bf7-16fb-4ce0-ae68-df141d217212",
+      "uuid": "d03f257f-2d4c-4f56-8d88-2e746f1adcdc",
       "type": "http",
       "documentation": "Returns artwork based on query string",
       "method": "get",
       "endpoint": "artwork",
       "responses": [
         {
-          "uuid": "d46e4943-a566-4344-be17-75660ad06018",
-          "body": "[\n  {\n    \"artworkID\": {{faker 'datatype.number'}},\n    \"artworkType\": {\n      \"artworkTypeID\": {{faker 'datatype.number'}},\n      \"artworkTypeName\": {{faker 'datatype.number'}}\n    },\n    \"uri\": \"\",\n    \"ownerPersonID\": {{faker 'datatype.number'}},\n    \"chips\": [\n      {\n        \"id\": {{faker 'datatype.number'}},\n        \"value\": \"\"\n      }\n    ]\n  }\n]",
+          "uuid": "d12c5b9e-b588-4e53-b53d-9ba9aff1523f",
+          "body": "[\n  {\n    \"artworkID\": \"{{faker 'datatype.uuid'}}\",\n    \"artworkType\": {\n      \"artworkTypeID\": {{faker 'datatype.number'}},\n      \"artworkTypeName\": {{faker 'datatype.number'}}\n    },\n    \"uri\": \"\",\n    \"ownerPersonID\": \"{{faker 'datatype.uuid'}}\",\n    \"chips\": [\n      {\n        \"id\": \"{{faker 'datatype.uuid'}}\",\n        \"value\": \"\"\n      }\n    ]\n  }\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "artwork response",
@@ -313,7 +313,7 @@
           "default": true
         },
         {
-          "uuid": "345bc33e-215b-4f03-86f0-4d2fa4d3e38f",
+          "uuid": "16938a7c-9c13-4a37-a0c2-2d87650ee16c",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -342,27 +342,27 @@
   "rootChildren": [
     {
       "type": "route",
-      "uuid": "9933b141-a164-4303-8623-cb0e1859b6cd"
+      "uuid": "a83849a7-fb2c-4e05-9ba3-ad32d788389b"
     },
     {
       "type": "route",
-      "uuid": "ef031e81-393e-4afc-89e9-a0bbeac629f8"
+      "uuid": "3fae4e78-0a09-484c-816c-324cca088369"
     },
     {
       "type": "route",
-      "uuid": "6420915a-15a5-48d7-a609-222daadfd2cf"
+      "uuid": "45ecd90d-55ee-4a5c-898c-8218335f86d7"
     },
     {
       "type": "route",
-      "uuid": "f5e9156c-5e84-46a3-a19f-2ad064ac9b4b"
+      "uuid": "18340580-c017-41b7-a234-ba35fe71f147"
     },
     {
       "type": "route",
-      "uuid": "06ecaf49-8f7f-4358-a1b2-46d8c85eb592"
+      "uuid": "43f85f4f-c04a-4816-a856-d0b4d8de304b"
     },
     {
       "type": "route",
-      "uuid": "ca838bf7-16fb-4ce0-ae68-df141d217212"
+      "uuid": "d03f257f-2d4c-4f56-8d88-2e746f1adcdc"
     }
   ],
   "proxyMode": false,
