@@ -1,20 +1,22 @@
 {
-  "uuid": "e5969d48-367c-4d2a-a817-c327bc132fe5",
-  "lastMigration": 20,
+  "uuid": "f8900950-dc48-4ccf-b364-f2b3f7776feb",
+  "lastMigration": 27,
   "name": "QueerGlobal Artwork API",
   "endpointPrefix": "api",
   "latency": 0,
   "port": 3001,
-  "hostname": "0.0.0.0",
+  "hostname": "",
+  "folders": [],
   "routes": [
     {
-      "uuid": "b305e115-fca3-41f0-be4e-1a8df0fd0eb0",
+      "uuid": "9933b141-a164-4303-8623-cb0e1859b6cd",
+      "type": "http",
       "documentation": "Healthcheck for this API",
       "method": "get",
       "endpoint": "healthcheck",
       "responses": [
         {
-          "uuid": "371f0c31-21c4-49d1-82fe-2bc179bb0c56",
+          "uuid": "e196f547-02b6-4538-a312-b4654662d777",
           "body": "[\n  {\n    \"status\": \"\",\n    \"serviceName\": \"\"\n  }\n]",
           "latency": 0,
           "statusCode": 200,
@@ -25,7 +27,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -34,7 +38,7 @@
           "default": true
         },
         {
-          "uuid": "052c45d5-5162-4da7-9092-3b1468cdf9c9",
+          "uuid": "f5e16db0-2df3-419f-898f-5ab1a30c1a4e",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -45,7 +49,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -55,18 +61,18 @@
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
-      "uuid": "26b668c9-402f-44b5-ac84-f09f8de7659c",
+      "uuid": "ef031e81-393e-4afc-89e9-a0bbeac629f8",
+      "type": "http",
       "documentation": "Returns an artwork by ID",
       "method": "get",
       "endpoint": "artwork/:id",
       "responses": [
         {
-          "uuid": "ef49424a-d5fb-435d-be96-65720a687f7b",
-          "body": "{\n  \"artworkID\": {{faker 'datatype.number'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "uuid": "4d35b8da-f860-4caa-b81b-0b5f4f16fadc",
+          "body": "{\n  \"artworkID\": {{urlParam 'id'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"\",\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "artwork response",
@@ -76,7 +82,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -85,7 +93,7 @@
           "default": true
         },
         {
-          "uuid": "c227adc2-1fbd-45e8-9b94-88c5e9d28f61",
+          "uuid": "aa9f2c63-f7fe-491a-95d8-788c9a7a5ff0",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -96,7 +104,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -106,17 +116,17 @@
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
-      "uuid": "0880e636-d5f8-425f-ac8d-419cefc27bfc",
+      "uuid": "6420915a-15a5-48d7-a609-222daadfd2cf",
+      "type": "http",
       "documentation": "Deletes an artwork by ID",
       "method": "delete",
       "endpoint": "artwork/:id",
       "responses": [
         {
-          "uuid": "99ec60c7-dbd7-4571-a41c-2580a7c2005b",
+          "uuid": "65363355-2787-4e21-8201-3bc594302cc6",
           "body": "",
           "latency": 0,
           "statusCode": 204,
@@ -127,7 +137,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -136,7 +148,7 @@
           "default": true
         },
         {
-          "uuid": "7b7c974e-6185-4786-8b79-7a2e1ae711f1",
+          "uuid": "a8b14e5a-d88c-45d5-9760-e1ce5d2d9f1d",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -147,7 +159,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -157,18 +171,18 @@
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
-      "uuid": "597480a2-d887-41c1-b258-0f10f4c1d094",
+      "uuid": "f5e9156c-5e84-46a3-a19f-2ad064ac9b4b",
+      "type": "http",
       "documentation": "Update an artwork",
       "method": "put",
       "endpoint": "artwork/:id",
       "responses": [
         {
-          "uuid": "6fddaf06-46f0-482b-b3c1-b25db3598d03",
-          "body": "{\n  \"artworkID\": {{faker 'datatype.number'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "uuid": "f0ae4ecb-7f75-4814-ae28-9d152a494bdb",
+          "body": "{\n  \"artworkID\": {{urlParam 'id'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"http://www.example.com/example\",\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "artwork",
@@ -178,7 +192,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -187,7 +203,7 @@
           "default": true
         },
         {
-          "uuid": "920cf8ce-21e8-4eee-b6b7-da8df51cddf9",
+          "uuid": "57647a0f-0e30-4449-8c59-7101de95587f",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -198,7 +214,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -208,18 +226,18 @@
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
-      "uuid": "ad55e10b-74fa-478f-870c-29b9139aee62",
+      "uuid": "06ecaf49-8f7f-4358-a1b2-46d8c85eb592",
+      "type": "http",
       "documentation": "Creates a new artwork",
       "method": "post",
       "endpoint": "artwork",
       "responses": [
         {
-          "uuid": "3b0e1821-2c81-4729-ac2c-62a65bd8eb0b",
-          "body": "{\n  \"artworkID\": {{faker 'datatype.number'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
+          "uuid": "a0e6aeb7-cc63-4f2c-b155-36a9b23ad4e3",
+          "body": "{\n  \"artworkID\": {{urlParam 'id'}},\n  \"artworkType\": {\n    \"artworkTypeID\": {{faker 'datatype.number'}},\n    \"artworkTypeName\": {{faker 'datatype.number'}}\n  },\n  \"uri\": \"\",\n  \"ownerPersonID\": {{faker 'datatype.number'}},\n  \"chips\": [\n    {\n      \"id\": {{faker 'datatype.number'}},\n      \"value\": \"\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "artwork",
@@ -229,7 +247,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -238,7 +258,7 @@
           "default": true
         },
         {
-          "uuid": "59135211-29c6-41d9-8a5a-7492e20c7f2b",
+          "uuid": "d8c524c7-b053-4da6-8250-d5e04dba130e",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -249,7 +269,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -259,18 +281,18 @@
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
     },
     {
-      "uuid": "a22c6bbd-aa45-49e1-beb4-775bf0aee8bf",
+      "uuid": "ca838bf7-16fb-4ce0-ae68-df141d217212",
+      "type": "http",
       "documentation": "Returns artwork based on query string",
       "method": "get",
       "endpoint": "artwork",
       "responses": [
         {
-          "uuid": "ada9daf3-02e3-4ef3-86a6-b2843134063b",
-          "body": "[\n  {\n    \"artworkID\": {{faker 'datatype.number'}},\n    \"artworkType\": {\n      \"artworkTypeID\": {{faker 'datatype.number'}},\n      \"artworkTypeName\": {{faker 'datatype.number'}}\n    },\n    \"ownerPersonID\": {{faker 'datatype.number'}},\n    \"chips\": [\n      {\n        \"id\": {{faker 'datatype.number'}},\n        \"value\": \"\"\n      }\n    ]\n  }\n]",
+          "uuid": "d46e4943-a566-4344-be17-75660ad06018",
+          "body": "[\n  {\n    \"artworkID\": {{faker 'datatype.number'}},\n    \"artworkType\": {\n      \"artworkTypeID\": {{faker 'datatype.number'}},\n      \"artworkTypeName\": {{faker 'datatype.number'}}\n    },\n    \"uri\": \"\",\n    \"ownerPersonID\": {{faker 'datatype.number'}},\n    \"chips\": [\n      {\n        \"id\": {{faker 'datatype.number'}},\n        \"value\": \"\"\n      }\n    ]\n  }\n]",
           "latency": 0,
           "statusCode": 200,
           "label": "artwork response",
@@ -280,7 +302,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -289,7 +313,7 @@
           "default": true
         },
         {
-          "uuid": "8ab5aaab-9dcd-4ada-a20e-fdea6f32bb7c",
+          "uuid": "345bc33e-215b-4f03-86f0-4d2fa4d3e38f",
           "body": "{\n  \"code\": {{faker 'datatype.number'}},\n  \"message\": \"\"\n}",
           "latency": 0,
           "statusCode": 200,
@@ -300,7 +324,9 @@
               "value": "application/json"
             }
           ],
+          "bodyType": "INLINE",
           "filePath": "",
+          "databucketID": "",
           "sendFileAsBody": false,
           "rules": [],
           "rulesOperator": "OR",
@@ -310,8 +336,33 @@
         }
       ],
       "enabled": true,
-      "randomResponse": false,
-      "sequentialResponse": false
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "9933b141-a164-4303-8623-cb0e1859b6cd"
+    },
+    {
+      "type": "route",
+      "uuid": "ef031e81-393e-4afc-89e9-a0bbeac629f8"
+    },
+    {
+      "type": "route",
+      "uuid": "6420915a-15a5-48d7-a609-222daadfd2cf"
+    },
+    {
+      "type": "route",
+      "uuid": "f5e9156c-5e84-46a3-a19f-2ad064ac9b4b"
+    },
+    {
+      "type": "route",
+      "uuid": "06ecaf49-8f7f-4358-a1b2-46d8c85eb592"
+    },
+    {
+      "type": "route",
+      "uuid": "ca838bf7-16fb-4ce0-ae68-df141d217212"
     }
   ],
   "proxyMode": false,
@@ -339,5 +390,6 @@
       "key": "",
       "value": ""
     }
-  ]
+  ],
+  "data": []
 }

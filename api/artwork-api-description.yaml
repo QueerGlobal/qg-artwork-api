@@ -209,6 +209,9 @@ components:
         artworkType:
           type: object
           $ref: '#/components/schemas/ArtworkType'
+        uri:
+          type: string
+          format: uri
         ownerPersonID:
           type: number
           format: int64
