@@ -204,8 +204,8 @@ components:
         - ownerPersonID
       properties:
         artworkID:
-          type: integer
-          format: int64
+          type: string
+          format: uuid
         artworkType:
           type: object
           $ref: '#/components/schemas/ArtworkType'
@@ -213,8 +213,8 @@ components:
           type: string
           format: uri
         ownerPersonID:
-          type: number
-          format: int64
+          type: string
+          format: uuid
         chips: 
           type: array
           items:
@@ -226,8 +226,8 @@ components:
         - value
       properties:
         id:
-          type: number
-          format: int64
+          type: string
+          format: uuid
         value:
           type: string
 
