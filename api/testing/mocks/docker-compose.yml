@@ -7,7 +7,7 @@ services:
     ports:
       - "31000:3000"
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:31001/api/healthcheck || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/healthcheck || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 2
